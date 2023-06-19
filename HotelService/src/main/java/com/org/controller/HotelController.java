@@ -14,7 +14,7 @@ public class HotelController {
 
     @Autowired
     private HotelService hotelService;
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<Hotel>> getAllHotel()
     {
         return hotelService.getAllHotel();
@@ -26,7 +26,7 @@ public class HotelController {
         return hotelService.getHotelById(id);
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Hotel> create(@RequestBody Hotel hotel)
     {
         return hotelService.create(hotel);
