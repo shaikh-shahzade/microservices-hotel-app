@@ -1,6 +1,7 @@
 package com.org.serviceimpl;
 
 import com.org.enitity.Rating;
+import com.org.exception.ResourceNotFoundException;
 import com.org.repository.RatingRepository;
 import com.org.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public ResponseEntity<Rating> getRatingsById(String id) {
-        Rating rating = ratingRepository.findById(id).orElseThrow();
+        Rating rating = ratingRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Rating","Rating",id));
         return new ResponseEntity<Rating>(rating, HttpStatus.OK);
     }
 
