@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 @Document("Rating")
 public class Rating {
+
     @Id
     private String ratingId;
     private Integer rating;
     private String feedback;
+    private Long userId;
 }

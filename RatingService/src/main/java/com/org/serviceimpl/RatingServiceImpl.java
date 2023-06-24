@@ -31,4 +31,10 @@ public class RatingServiceImpl implements RatingService {
         Rating r = ratingRepository.save(rating);
         return new ResponseEntity<Rating>(r, HttpStatus.CREATED);
     }
+
+    @Override
+    public ResponseEntity<List<Rating>> getRatingsByUserId(Long userId) {
+        List<Rating> ratings  = ratingRepository.findRatingByUserId(userId);
+        return new ResponseEntity<List<Rating>>(ratings,HttpStatus.OK);
+    }
 }

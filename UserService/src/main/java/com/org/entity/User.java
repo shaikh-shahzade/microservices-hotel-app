@@ -1,8 +1,11 @@
 package com.org.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.org.payload.Rating;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -18,5 +21,7 @@ public class User {
     private String name;
     private String email;
     private String about;
+    @Transient
+    private List<Rating> ratings;
 
 }

@@ -29,4 +29,10 @@ public class RatingController {
     {
         return  ratingService.createRating(rating);
     }
+    @GetMapping("user/{userId}")
+    public ResponseEntity<List<Rating>> getRatingsByUserId(@PathVariable Long userId)
+    {
+        return ratingService.getRatingsByUserId(userId);
+    }
+
 }

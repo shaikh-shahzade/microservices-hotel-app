@@ -11,4 +11,5 @@ public interface RatingService {
     public ResponseEntity<Rating> getRatingsById(String id);
 
     public ResponseEntity<Rating> createRating(Rating rating);
+    public ResponseEntity<List<Rating>> getRatingsByUserId(Long userId);
 }
